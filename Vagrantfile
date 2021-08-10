@@ -19,5 +19,10 @@ Vagrant.configure("2") do |config|
         hv.vmname = "homestead"
     end
     config.vm.hostname = "hypervhost"
+    config.vm.synced_folder '.', '/vagrant', {
+      type: 'smb', mount_options: ['vers=3.0'],
+      smb_username: 'username',
+      smb_password: 'password'
+    }
     config.vm.box = "centos/7"
 end
