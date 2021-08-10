@@ -18,5 +18,6 @@ Vagrant.configure("2") do |config|
     config.vm.provider "hyperv" do |hv|
         hv.vmname = "homestead"
     end
+    config.vm.hostname = "hypervhost"
     config.vm.box = "centos/7"
 end
